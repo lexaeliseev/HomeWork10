@@ -4,7 +4,7 @@ from selene import browser, be, have
 
 
 @allure.tag("web")
-@allure.label("owner", "aa.eliseev")
+@allure.label("owner", "a.eliseev")
 @allure.severity(Severity.CRITICAL)
 @allure.feature("Задача Issues")
 @allure.story("Проверка наличия задачи в Issues")
