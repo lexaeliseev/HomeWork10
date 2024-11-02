@@ -33,7 +33,7 @@ def click_issues():
     browser.element('[data-content="Issues"]').click()
 
 
-@allure.step("Проверяем наличие Issues")
+@allure.step("Проверяем наличие Issues с названием {value}")
 def check_value(issue_name, value):
     browser.element(f'//a[@id="issue_3_link" and contains(text(), "{issue_name}")]').should(be.visible).should(
         have.text(f"{value}"))
