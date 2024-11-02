@@ -3,7 +3,7 @@ from selene import browser
 from selenium import webdriver
 
 
-@pytest.fixture(autouse=True, scope="session")
+@pytest.fixture(autouse=True)
 def browser_settings():
     browser.config.base_url = 'https://github.com'
     driver_options = webdriver.ChromeOptions()
