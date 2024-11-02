@@ -1,6 +1,14 @@
+import allure
+from allure_commons.types import Severity
 from selene import browser, be, have
 
 
+@allure.tag("web")
+@allure.label("owner", "aa.eliseev")
+@allure.severity(Severity.CRITICAL)
+@allure.feature("Задача Issues")
+@allure.story("Проверка наличия задачи в Issues")
+@allure.link("https://github.com", name="github")
 def test_selene():
     browser.open('/lexaeliseev')
 
