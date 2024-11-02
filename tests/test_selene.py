@@ -9,10 +9,11 @@ from selene import browser, be, have
 @allure.feature("Задача Issues")
 @allure.story("Проверка наличия задачи в Issues")
 @allure.link("https://github.com", name="github")
-def test_selene():
+
+def test_selene(firefox_headless_mode):
     browser.open('/lexaeliseev')
 
-    browser.element('[data-tab-item="repositories"]').click()
+    browser.element('[data-tab-item="repositories"]').double_click()
 
     browser.element('//h3[@class="wb-break-all"]/a[contains(text(), "HomeWork7")]').should(
         have.text("HomeWork7")).click()

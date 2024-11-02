@@ -9,7 +9,7 @@ from selene import browser, be, have
 @allure.feature("Задача Issues")
 @allure.story("Проверка наличия задачи в Issues")
 @allure.link("https://github.com", name="github")
-def test_decorators_steps():
+def test_decorators_steps(firefox_headless_mode):
     open_page('/lexaeliseev')
     click_repo("HomeWork7")
     click_issues()
@@ -30,7 +30,7 @@ def click_repo(name):
 
 @allure.step("Переходим в таб Issues")
 def click_issues():
-    browser.element('[data-content="Issues"]').click()
+    browser.element('[data-content="Issues"]').double_click()
 
 
 @allure.step("Проверяем наличие Issues с названием {value}")

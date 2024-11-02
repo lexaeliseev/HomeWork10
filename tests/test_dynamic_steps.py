@@ -3,7 +3,7 @@ from allure_commons.types import Severity
 from selene import browser, be, have
 
 
-def test_dynamic_steps():
+def test_dynamic_steps(firefox_headless_mode):
     allure.dynamic.tag("web")
     allure.label("owner", "aa.eliseev")
     allure.dynamic.severity(Severity.CRITICAL)
@@ -20,7 +20,7 @@ def test_dynamic_steps():
         have.text("HomeWork7")).click()
 
     with allure.step("Переходим во вкладку Issues"):
-        browser.element('[data-content="Issues"]').click()
+        browser.element('[data-content="Issues"]').double_click()
 
     with allure.step("Проверяем наличие Issues с названием 'Create Issues'"):
         browser.element('//a[@id="issue_3_link" and contains(text(), "Create Issues")]').should(be.visible).should(
